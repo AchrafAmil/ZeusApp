@@ -1,7 +1,8 @@
-package com.achrafamil.zeusapp
+package com.achrafamil.zeusapp.albums
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.achrafamil.zeusapp.R
 
 class AlbumsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

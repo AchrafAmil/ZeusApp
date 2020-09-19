@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ZeusApp"
         >
-        <activity android:name=".AlbumsActivity">
+        <activity android:name=".albums.AlbumsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
