@@ -1,9 +1,9 @@
 package com.achrafamil.zeusapp.albums.recycler
 
 import android.view.View
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import kotlinx.android.synthetic.main.item_album_title.view.*
 import kotlinx.android.synthetic.main.item_album_track.view.*
 
 abstract class AlbumsViewHolder<in T : ItemUiModel>(
@@ -16,7 +16,7 @@ class AlbumTitleViewHolder(
     itemView: View
 ) : AlbumsViewHolder<AlbumTitleUiModel>(itemView) {
     override fun bind(uiModel: AlbumTitleUiModel) {
-        (itemView as TextView).text = uiModel.text
+        itemView.item_album_title_textview.text = uiModel.text
     }
 }
 
@@ -26,5 +26,14 @@ class TrackViewHolder(
     override fun bind(uiModel: TrackUiModel) {
         itemView.item_album_track_imageview.load(uiModel.thumbnailUrl)
         itemView.item_album_track_textview.text = uiModel.title
+    }
+}
+
+
+class SeparatorViewHolder(
+    itemView: View
+) : AlbumsViewHolder<SeparatorUiModel>(itemView) {
+    override fun bind(uiModel: SeparatorUiModel) {
+        /* no-op */
     }
 }

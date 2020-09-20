@@ -14,3 +14,7 @@ data class TrackUiModel(
     val title: String,
     val thumbnailUrl: String
 ) : ItemUiModel()
+
+data class SeparatorUiModel(
+    override val id: String
+) : ItemUiModel()

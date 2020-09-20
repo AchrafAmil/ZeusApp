@@ -20,6 +20,8 @@ class AlbumsAdapter @Inject constructor(
                 AlbumTitleViewHolder(inflater.inflate(R.layout.item_album_title, parent, false))
             TRACK_TYPE ->
                 TrackViewHolder(inflater.inflate(R.layout.item_album_track, parent, false))
+            SEPARATOR_TYPE ->
+                SeparatorViewHolder(inflater.inflate(R.layout.item_album_separator, parent, false))
             else -> throw IllegalArgumentException("viewType not recognized: $viewType")
         }
     }
@@ -33,6 +35,7 @@ class AlbumsAdapter @Inject constructor(
         return when (getItem(position)) {
             is AlbumTitleUiModel -> ALBUM_TITLE_TYPE
             is TrackUiModel -> TRACK_TYPE
+            is SeparatorUiModel -> SEPARATOR_TYPE
         }
     }
 
@@ -49,5 +52,6 @@ class AlbumsAdapter @Inject constructor(
 
         private const val ALBUM_TITLE_TYPE = 0
         private const val TRACK_TYPE = 1
+        private const val SEPARATOR_TYPE = 2
     }
 }
