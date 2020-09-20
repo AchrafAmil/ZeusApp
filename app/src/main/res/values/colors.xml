@@ -14,4 +14,9 @@
     <color name="dodger_blue">#2196F3</color>
     <color name="royal_blue">#536DFE</color>
     <color name="mine_shaft">#212121</color>
+
+    <color name="shark">#282D32</color>
+    <color name="woodsmoke">#121517</color>
+    <color name="black_squeeze">#ECF8F8</color>
+    <color name="blue_grey_900">#212529</color>
 </resources>
