@@ -28,7 +28,7 @@
 
     <include
         android:id="@+id/item_album_title_separator"
-        layout="@layout/item_album_separator"
+        layout="@layout/album_separator"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,4 +37,3 @@
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

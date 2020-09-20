@@ -11,7 +11,6 @@
         android:paddingRight="22dp"
         />
 
-    <!-- don't reference a theme color in pre-v21 apis -->
-    <solid android:color="@color/mariner" />
+    <solid android:color="?attr/colorAccent" />
 
 </shape>
