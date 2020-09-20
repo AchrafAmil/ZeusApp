@@ -51,6 +51,12 @@ dependencies {
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
     api "com.squareup.retrofit2:converter-moshi:$retrofit_version"
     api "com.squareup.moshi:moshi-kotlin:$moshi_version"
+    //noinspection GradleDependency
+    api("com.squareup.okhttp3:okhttp:3.12.12") {
+        version {
+            strictly '3.12.12' // support for API levels pre-21
+        }
+    }
 
     kapt "se.ansman.kotshi:compiler:$kotshi_version"
     kapt "androidx.room:room-compiler:$room_version"
