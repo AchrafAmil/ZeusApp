@@ -22,21 +22,30 @@
             style="@style/Zeus.Headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxLines="1"
             android:ellipsize="end"
+            android:maxLines="1"
             android:text="@string/albums_toolbar_title"
             />
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/albums_recycler"
+    <com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller
+        android:id="@+id/fastscroller"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:handleDrawable="@drawable/scroll_handle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/albums_toolbar"
-        tools:listitem="@layout/item_album_track"
-        />
+        >
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/albums_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="64dp"
+            tools:listitem="@layout/item_album_track"
+            />
+    </com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller>
 </androidx.constraintlayout.widget.ConstraintLayout>
