@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/shark</item>
         <item name="colorPrimaryVariant">@color/woodsmoke</item>
         <item name="colorOnPrimary">@color/black_squeeze</item>
-        <item name="colorAccent">@color/mariner</item>
+        <item name="colorAccent">@color/endeavour</item>
         <item name="colorSurface">@color/blue_grey_900</item>
         <item name="colorOnSurface">@color/black_squeeze</item>
         <item name="android:windowBackground">@color/woodsmoke</item>
