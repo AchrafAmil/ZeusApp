@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
@@ -19,12 +20,22 @@ class AlbumsViewModel @ViewModelInject constructor(
     @ApplicationContext private val context: Context
 ) : ViewModel() {
 
+    private val _isLoading = MutableLiveData(false)
+
+    val isLoading: LiveData<Boolean> = _isLoading
     val uiModel: LiveData<AlbumsUiModel> = trackRepository
         .getTracksFlow()
         .map { tracks -> uiModelMapper.map(tracks) }
         .asLiveData(viewModelScope.coroutineContext)
 
     init {
+        triggerSync()
+    }
+
+    fun onRefresh() = triggerSync()
+
+    private fun triggerSync() {
+        _isLoading.value = true
         viewModelScope.launch {
             try {
                 trackRepository.syncTracks()
@@ -32,6 +43,8 @@ class AlbumsViewModel @ViewModelInject constructor(
                 val message = "Failed to sync with server, check internet."
                 Log.e(LOG_TAG, message, exception)
                 context.toast(message)
+            } finally {
+                _isLoading.value = false
             }
         }
     }

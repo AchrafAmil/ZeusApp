@@ -28,11 +28,10 @@
             />
     </androidx.appcompat.widget.Toolbar>
 
-    <com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller
-        android:id="@+id/fastscroller"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/albums_swipe_refresh"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:handleDrawable="@drawable/scroll_handle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -47,5 +46,17 @@
             android:paddingBottom="64dp"
             tools:listitem="@layout/item_album_track"
             />
-    </com.qtalk.recyclerviewfastscroller.RecyclerViewFastScroller>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <xyz.danoz.recyclerviewfastscroller.vertical.VerticalRecyclerViewFastScroller
+        android:id="@+id/albums_fast_scroller"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/albums_swipe_refresh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/albums_swipe_refresh"
+        app:rfs_barColor="@color/transparent"
+        app:rfs_handleColor="?attr/colorAccent"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

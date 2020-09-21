@@ -13,6 +13,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class AlbumsActivity : AppCompatActivity() {
     private val viewModel: AlbumsViewModel by viewModels()
+
     @Inject
     lateinit var albumsAdapter: AlbumsAdapter
 
@@ -20,6 +21,7 @@ class AlbumsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_albums)
         setupRecycler()
+        setupSwipeToRefresh()
         observeViewModel()
     }
 
@@ -28,11 +30,22 @@ class AlbumsActivity : AppCompatActivity() {
         layoutManager = LinearLayoutManager(context)
         adapter = albumsAdapter
         preserveFocusAfterLayout = false
+        albums_fast_scroller.setRecyclerView(this)
+        addOnScrollListener(albums_fast_scroller.onScrollListener)
+    }
+
+    private fun setupSwipeToRefresh() {
+        albums_swipe_refresh.setOnRefreshListener {
+            viewModel.onRefresh()
+        }
     }
 
     private fun observeViewModel() {
         viewModel.uiModel.observe(this) { uiModel ->
             albumsAdapter.submitList(uiModel.items)
+        }
+        viewModel.isLoading.observe(this) { isLoading ->
+            albums_swipe_refresh.isRefreshing = isLoading
         }
     }
 }
