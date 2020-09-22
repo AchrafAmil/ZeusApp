@@ -8,13 +8,15 @@ import com.achrafamil.zeusapp.albums.recycler.SeparatorUiModel
 import com.achrafamil.zeusapp.albums.recycler.TrackUiModel
 import com.achrafamil.zeusapp.common.core.Track
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class UiModelMapper @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
-    fun map(tracks: List<Track>): AlbumsUiModel {
-        return AlbumsUiModel(mapTracks(tracks))
+    suspend fun map(tracks: List<Track>): AlbumsUiModel = withContext(Dispatchers.IO) {
+        AlbumsUiModel(mapTracks(tracks))
     }
 
     private fun mapTracks(tracks: List<Track>): List<ItemUiModel> {
