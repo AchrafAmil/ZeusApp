@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Zeus.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary" />
+
+    <style name="Zeus.Headline" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Zeus.Headline</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Zeus.Subtitle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Zeus.Subtitle</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Zeus.Body" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Zeus.Body</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="TextAppearance.Zeus.Headline" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/raleway_bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextAppearance.Zeus.Subtitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/raleway_medium</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="TextAppearance.Zeus.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/raleway_regular</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+</resources>
