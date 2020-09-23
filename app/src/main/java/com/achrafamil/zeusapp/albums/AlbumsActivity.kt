@@ -42,7 +42,10 @@ class AlbumsActivity : AppCompatActivity() {
 
     private fun observeViewModel() {
         viewModel.uiModel.observe(this) { uiModel ->
-            albumsAdapter.submitList(uiModel.items)
+            val scrollState = albums_recycler.scrollState
+            albumsAdapter.submitList(uiModel.items) {
+                albums_recycler.scrollToPosition(scrollState)
+            }
         }
         viewModel.isLoading.observe(this) { isLoading ->
             albums_swipe_refresh.isRefreshing = isLoading
