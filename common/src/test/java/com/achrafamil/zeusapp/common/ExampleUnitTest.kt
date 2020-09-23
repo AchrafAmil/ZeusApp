@@ -1,4 +1,4 @@
-package com.achrafamil.zeusapp
+package com.achrafamil.zeusapp.common
 
 import org.junit.Test
 

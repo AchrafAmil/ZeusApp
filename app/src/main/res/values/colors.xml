@@ -5,6 +5,21 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="mariner">#1976D2</color>
+    <color name="sail">#BBDEFB</color>
+    <color name="dodger_blue">#2196F3</color>
+    <color name="royal_blue">#536DFE</color>
+    <color name="mine_shaft">#212121</color>
+
+    <color name="shark">#282D32</color>
+    <color name="woodsmoke">#121517</color>
+    <color name="black_squeeze">#ECF8F8</color>
+    <color name="blue_grey_900">#212529</color>
+    <color name="endeavour">#1F4A73</color>
+
+    <color name="transparent">#00000000</color>
 </resources>
